@@ -9,7 +9,7 @@ final int STONESIZE = round(CELLSIZE * 0.9);
 final int HITO = 1;
 final int COMP = 2;
 
-final int MAXDEPTH = 2;
+final int MAXDEPTH = 5;
 
 final int[][] tensu =
   { {0,0,  0,0,0,0,0,  0,0,0},
