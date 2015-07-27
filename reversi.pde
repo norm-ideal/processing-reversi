@@ -27,6 +27,7 @@ int sente;
 int gote;
 int passCount;
 int moveCount;
+boolean redraw = true;
  
 // ************************ strategy *************************
 
@@ -43,7 +44,7 @@ void setup()
   passCount = 0;
   moveCount = 0;
  
-  size(640, 640);
+  size(640, 640);  // this needs to be constant for JavaScript
   ban = new Ban();
 }
  
@@ -98,6 +99,12 @@ void draw()
  
   if( (teban==KURO && sente == COMP) || (teban==SHIRO && gote == COMP))
   {
+    // if redraw-flag is on, return once to draw the board.
+    if( redraw )
+    {
+      redraw = false;
+      return;
+    }
     Move m;
     m = ban.getMoveR(teban, MAXDEPTH, 0);
 
@@ -106,6 +113,7 @@ void draw()
     passCount = 0;
     moveCount++;
     teban = -teban;
+    redraw = true;
   } 
 }
   
