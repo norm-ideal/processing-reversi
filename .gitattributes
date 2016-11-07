@@ -1,1 +1,3 @@
-*.pde linguist-language=processing
+*.pde   linguist-language=processing
+java/*  linguist-vendored
+
